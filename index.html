@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restricted Access</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background">
+        <div class="grid"></div>
+    </div>
+
+    <main class="login-card">
+
+        <div class="warning">⚠ UNUSUAL ACTIVITY DETECTED</div>
+
+        <h1>Wait...</h1>
+
+        <p class="mystery">
+            We have been trying to identify<br>
+            a very specific person.
+        </p>
+
+        <p class="small-text">
+            If you received this message, you may already be involved.
+        </p>
+
+        <div class="line"></div>
+
+        <label for="teacherName">IDENTIFICATION REQUIRED</label>
+
+        <input
+            type="text"
+            id="teacherName"
+            placeholder="Enter your name..."
+            autocomplete="off"
+        >
+
+        <button onclick="checkTeacher()">
+            VERIFY IDENTITY
+        </button>
+
+        <p id="message"></p>
+
+        <div class="footer">
+            SYSTEM STATUS: <span>UNSTABLE</span>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

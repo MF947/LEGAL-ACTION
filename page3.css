@@ -1,0 +1,490 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    background: #e9e7e1;
+
+    color: #202020;
+
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+}
+
+
+/* DOCUMENT */
+
+.document {
+    width: min(95%, 760px);
+
+    background: #fffdf8;
+
+    border: 1px solid #c9c4b8;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.18);
+
+    animation: appear 0.8s ease;
+}
+
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* HEADER */
+
+.government-header {
+
+    min-height: 145px;
+
+    padding: 25px 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+.department {
+    text-align: left;
+}
+
+.small-title{
+
+    color: #5d6570;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+.department h2 {
+
+    font-family: Georgia, serif;
+
+    font-size: 28px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+
+}
+
+.division {
+
+    color: #737a83;
+
+    font-size: 20px;
+
+    letter-spacing: 1.8px;
+
+    margin-top: 7px;
+
+}
+
+
+.header-logo img {
+    height: 80px; /* Adjust height to fit your logo */
+    width:auto 
+}
+
+.header-divider {
+    height: 2px;
+    background-color: #b71c1c; /* Red bar line */
+    margin-top: 20px;
+}
+
+
+/* FILE INFORMATION */
+
+.file-info {
+
+    margin: 20px 30px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid #ccc;
+
+    border-bottom: 1px solid #ccc;
+}
+
+
+.file-info div {
+
+    padding: 14px 10px;
+
+    text-align: center;
+
+    border-right: 1px solid #ddd;
+}
+
+
+.file-info div:last-child {
+    border-right: none;
+}
+
+
+.file-info span {
+
+    display: block;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    color: #777;
+
+    margin-bottom: 6px;
+}
+
+
+.file-info strong {
+
+    font-family: "Courier New", monospace;
+
+    font-size: 10px;
+}
+
+
+.active {
+
+    color: #8a3e32;
+}
+
+
+/* MAIN CONTENT */
+
+.main-content {
+
+    padding: 15px 55px 40px;
+
+    text-align: center;
+}
+
+
+.notice-heading {
+
+    font-family: "Courier New", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #8a3e32;
+
+    margin-bottom: 15px;
+}
+
+
+h1 {
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(28px, 5vw, 45px);
+
+    line-height: 1.15;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+}
+
+
+.underline {
+
+    width: 65px;
+
+    height: 2px;
+
+    background: #333;
+
+    margin: 20px auto;
+}
+
+
+.intro {
+
+    max-width: 550px;
+
+    margin: auto;
+
+    color: #555;
+
+    font-family: Georgia, serif;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* CASE DETAILS */
+
+.case-details {
+
+    margin: 30px auto;
+
+    max-width: 580px;
+
+    border: 1px solid #d0cbc1;
+
+    background: #faf8f3;
+}
+
+
+.row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 15px 18px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+
+.row:last-child {
+    border-bottom: none;
+}
+
+
+.row span {
+
+    color: #777;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+
+.row strong {
+
+    font-family: "Courier New", monospace;
+
+    font-size: 10px;
+}
+
+
+/* WARNING */
+
+.warning-text {
+
+    max-width: 500px;
+
+    margin: 25px auto;
+
+    color: #666;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* BUTTON */
+
+button {
+
+    width: min(100%, 400px);
+
+    padding: 15px;
+
+    border: 1px  hwb(240 8% 6%);
+
+    background: navy;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-family: "Courier New", monospace;
+
+    font-weight: bold;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    transition: 0.25s;
+}
+
+
+button:hover {
+
+    background: #0f0f7a;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.15);
+}
+
+
+button:disabled {
+
+    opacity: 0.7;
+
+    cursor: wait;
+}
+
+
+#status {
+
+    min-height: 18px;
+
+    margin-top: 12px;
+
+    color: #777;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 10px;
+}
+
+
+/* FOOTER */
+
+footer {
+
+    padding: 0 30px 25px;
+
+    text-align: center;
+
+    color: #777;
+}
+
+
+.footer-line {
+
+    height: 1px;
+
+    background: #ddd;
+
+    margin-bottom: 15px;
+}
+
+
+footer p {
+
+    font-family: Georgia, serif;
+
+    font-size: 10px;
+}
+
+
+footer .tiny {
+
+    margin-top: 6px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    color: #aaa;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 10px;
+    }
+
+
+    .government-header {
+
+        padding: 20px;
+
+        align-items: flex-start;
+    }
+
+
+    .department h2 {
+
+        font-size: 16px;
+    }
+
+
+    .file-info {
+
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+
+    .file-info {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .file-info div {
+
+        border-right: none;
+
+        border-bottom: 1px solid #ddd;
+    }
+
+
+    .file-info div:last-child {
+
+        border-bottom: none;
+    }
+
+
+    .main-content {
+
+        padding: 15px 22px 35px;
+    }
+
+
+    .row {
+
+        flex-direction: column;
+
+        gap: 7px;
+
+        text-align: left;
+    }
+
+
+    h1 {
+
+        font-size: 29px;
+    }
+}

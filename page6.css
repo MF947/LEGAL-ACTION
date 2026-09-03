@@ -1,0 +1,983 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ================================
+   PAGE
+================================ */
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 20% 10%,
+            #ffe5f0,
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 20%,
+            #fff0c7,
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fff7fb,
+            #fffaf0,
+            #f5f7ff
+        );
+
+    color: #493b4b;
+
+    display: flex;
+
+    justify-content: center;
+
+    padding: 30px 15px;
+
+    overflow-x: hidden;
+}
+
+
+/* ================================
+   FLOATING DECORATIONS
+================================ */
+
+.decor {
+
+    position: fixed;
+
+    font-size: 30px;
+
+    pointer-events: none;
+
+    animation:
+        floatDecor
+        4s
+        ease-in-out
+        infinite;
+
+    z-index: 0;
+}
+
+
+.decor1 {
+
+    top: 8%;
+
+    left: 8%;
+
+    color: #ff8fab;
+}
+
+
+.decor2 {
+
+    top: 20%;
+
+    right: 8%;
+
+    color: #ffc857;
+
+    animation-delay: 1s;
+}
+
+
+.decor3 {
+
+    bottom: 15%;
+
+    left: 10%;
+
+    color: #9b8cff;
+
+    animation-delay: 2s;
+}
+
+
+.decor4 {
+
+    bottom: 10%;
+
+    right: 12%;
+
+    color: #ff9f68;
+
+    animation-delay: 3s;
+}
+
+
+@keyframes floatDecor {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-18px)
+            rotate(12deg);
+
+    }
+}
+
+
+/* ================================
+   MAIN PAGE
+================================ */
+
+.teachers-page {
+
+    position: relative;
+
+    z-index: 1;
+
+    width: min(100%, 850px);
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+
+/* ================================
+   TOP LABEL
+================================ */
+
+.top-label {
+
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    border-radius: 30px;
+
+    background: #ffffff;
+
+    color: #a16a8a;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(140, 100, 130, 0.12);
+
+    animation:
+        fadeDown
+        0.8s
+        ease
+        forwards;
+}
+
+
+/* ================================
+   TITLE
+================================ */
+
+.title {
+
+    margin-top: 25px;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: clamp(
+        45px,
+        8vw,
+        78px
+    );
+
+    line-height: 1;
+
+    color: #61495e;
+
+    animation:
+        titleAppear
+        1s
+        ease
+        forwards;
+}
+
+
+.title span {
+
+    display: block;
+
+    margin-top: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff719a,
+            #ffad5a,
+            #8c7cff,
+            #ff719a
+        );
+
+    background-size: 300%;
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+    animation:
+        rainbowText
+        5s
+        linear
+        infinite;
+}
+
+
+@keyframes rainbowText {
+
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 300%;
+    }
+}
+
+
+.subtitle {
+
+    margin-top: 20px;
+
+    color: #806f7e;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    animation:
+        fadeUp
+        1s
+        0.3s
+        both;
+}
+
+
+/* ================================
+   PRESENT CARD
+================================ */
+
+.present-card {
+
+    position: relative;
+
+    margin: 45px auto 25px;
+
+    padding: 55px 35px 40px;
+
+    max-width: 700px;
+
+    background:
+        rgba(255,255,255,0.88);
+
+    border:
+        2px solid
+        rgba(255, 167, 194, 0.45);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(173, 115, 145, 0.18);
+
+    animation:
+        cardAppear
+        1s
+        0.5s
+        both;
+}
+
+
+.present-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 30px 80px
+        rgba(173, 115, 145, 0.25);
+}
+
+
+/* ================================
+   RIBBON
+================================ */
+
+.ribbon {
+
+    position: absolute;
+
+    top: -2px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 75px;
+
+    height: 35px;
+
+    background: #ff8eaa;
+
+    border-radius:
+        0 0 12px 12px;
+}
+
+
+.ribbon::before,
+.ribbon::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: -18px;
+
+    width: 25px;
+
+    height: 28px;
+
+    background: #ff8eaa;
+}
+
+
+.ribbon::before {
+
+    left: 8px;
+
+    transform:
+        rotate(28deg);
+}
+
+
+.ribbon::after {
+
+    right: 8px;
+
+    transform:
+        rotate(-28deg);
+}
+
+
+/* ================================
+   GIFT
+================================ */
+
+.gift-icon {
+
+    font-size: 52px;
+
+    margin-bottom: 15px;
+
+    animation:
+        giftBounce
+        2s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes giftBounce {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px)
+            rotate(4deg);
+
+    }
+}
+
+
+.present-card h2 {
+
+    color: #6c5368;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 27px;
+
+    margin-bottom: 22px;
+}
+
+
+/* ================================
+   MESSAGE
+================================ */
+
+.message {
+
+    color: #786b78;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+}
+
+
+.thank-you {
+
+    margin-top: 20px;
+
+    color: #66505f;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    font-weight: 500;
+}
+
+
+/* ================================
+   HEART LINE
+================================ */
+
+.heart-line {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin: 22px 0;
+
+    color: #ff789e;
+
+    font-size: 19px;
+}
+
+
+.heart-line span {
+
+    width: 80px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #ff9db8,
+            transparent
+        );
+}
+
+
+/* ================================
+   QUOTE CARD
+================================ */
+
+.quote-card {
+
+    position: relative;
+
+    max-width: 620px;
+
+    margin: 35px auto;
+
+    padding: 38px 45px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f5,
+            #fff8df
+        );
+
+    border-radius: 22px;
+
+    border:
+        1px solid
+        rgba(255, 181, 197, 0.6);
+
+    box-shadow:
+        0 15px 40px
+        rgba(150, 110, 130, 0.12);
+
+    animation:
+        fadeUp
+        1s
+        1s
+        both;
+}
+
+
+.quote-card p {
+
+    color: #665461;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    font-style: italic;
+}
+
+
+.quote-mark {
+
+    position: absolute;
+
+    top: 5px;
+
+    left: 20px;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 60px;
+
+    color: #ff9bb5;
+
+    opacity: 0.6;
+}
+
+
+.quote-mark.closing {
+
+    top: auto;
+
+    left: auto;
+
+    right: 20px;
+
+    bottom: -25px;
+}
+
+
+/* ================================
+   LITTLE NOTES
+================================ */
+
+.little-notes {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    max-width: 700px;
+
+    margin: 35px auto;
+}
+
+
+.note {
+
+    padding: 20px 12px;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(130,100,130,0.1);
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.note:hover {
+
+    transform:
+        translateY(-7px)
+        rotate(-1deg);
+}
+
+
+.note strong {
+
+    display: block;
+
+    font-size: 14px;
+
+    letter-spacing: 1.5px;
+
+    color: #9a6c8a;
+
+    margin-bottom: 7px;
+}
+
+
+.note span {
+
+    color: #887a87;
+
+    font-size: 13px;
+}
+
+
+/* ================================
+   FINAL MESSAGE
+================================ */
+
+.final-message {
+
+    margin: 40px auto 30px;
+
+    color: #756574;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+.final-message strong {
+
+    color: #e66d93;
+}
+
+
+/* ================================
+   CONTINUE BUTTON
+================================ */
+
+.continue-button {
+
+    display: inline-block;
+
+    margin-top: 10px;
+
+    padding: 17px 28px;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff789f,
+            #ffab65,
+            #8f81ff
+        );
+
+    background-size: 200%;
+
+    box-shadow:
+        0 12px 30px
+        rgba(213, 116, 153, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+    animation:
+        buttonGlow
+        3s
+        infinite;
+}
+
+
+.continue-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 17px 38px
+        rgba(213, 116, 153, 0.35);
+}
+
+
+@keyframes buttonGlow {
+
+    0% {
+        background-position: 0%;
+    }
+
+    50% {
+        background-position: 100%;
+    }
+
+    100% {
+        background-position: 0%;
+    }
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+
+    margin-top: 45px;
+
+    color: #aa9ca8;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* ================================
+   ANIMATIONS
+================================ */
+
+@keyframes fadeDown {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+}
+
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+}
+
+
+@keyframes titleAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.9);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+    }
+}
+
+
+@keyframes cardAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.97);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 700px) {
+
+    body {
+
+        padding:
+            18px 10px;
+    }
+
+
+    .teachers-page {
+
+        padding:
+            15px 8px;
+    }
+
+
+    .title {
+
+        font-size: 48px;
+
+        line-height: 1.05;
+    }
+
+
+    .subtitle {
+
+        font-size: 15px;
+    }
+
+
+    .present-card {
+
+        margin-top: 35px;
+
+        padding:
+            50px 20px 30px;
+
+        border-radius: 22px;
+    }
+
+
+    .present-card h2 {
+
+        font-size: 23px;
+    }
+
+
+    .message {
+
+        font-size: 15px;
+
+        line-height: 1.8;
+    }
+
+
+    .thank-you {
+
+        font-size: 15px;
+    }
+
+
+    .quote-card {
+
+        padding:
+            35px 25px;
+    }
+
+
+    .quote-card p {
+
+        font-size: 17px;
+    }
+
+
+    .little-notes {
+
+        grid-template-columns: 1fr;
+
+        max-width: 300px;
+    }
+
+
+    .continue-button {
+
+        width: 100%;
+
+        font-size: 12px;
+
+        padding:
+            16px 10px;
+    }
+
+
+    .decor {
+
+        font-size: 22px;
+    }
+
+}

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CASE FILE #0509</title>
+
+    <link rel="stylesheet" href="page4.css">
+
+</head>
+
+
+<body>
+
+<main class="case-file">
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div>
+
+            <p class="system">
+                INTERNAL REVIEW SYSTEM
+            </p>
+
+            <h1>
+                CASE FILE #0509
+            </h1>
+
+            <h2>
+                Subject: Unauthorized use of authority
+            </h2>
+
+        </div>
+
+
+        <div class="case-status">
+            CASE ACTIVE
+        </div>
+
+    </header>
+
+
+
+    <!-- CHECKING THE CULPRIT -->
+
+    <section class="culprit">
+
+        <div class="section-heading">
+
+            <span>01</span>
+
+            <h3>
+                CHECKING THE CULPRIT
+            </h3>
+
+        </div>
+
+
+        <p class="checking-text">
+            Analyzing ability profile...
+            <span class="dots">...</span>
+        </p>
+
+
+
+        <!-- IDENTITY -->
+
+        <div
+            class="ability"
+            style="--delay: 0s"
+        >
+
+            <div class="check">
+                ☑
+            </div>
+
+            <div class="ability-name">
+                Identity
+            </div>
+
+            <div class="result verified">
+                VERIFIED
+            </div>
+
+            <div class="indicator verified-indicator">
+                       ✓
+            </div>
+
+        </div>
+
+
+
+        <!-- KNOWLEDGE -->
+
+        <div
+            class="ability"
+            style="--delay: 0.7s"
+        >
+
+            <div class="check">
+                ☑
+            </div>
+
+            <div class="ability-name">
+                Knowledge
+            </div>
+
+            <div class="result extreme blink">
+                EXTREME
+            </div>
+
+            <div class="indicator knowledge-indicator">
+
+                <div class="mini-graph">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <strong>
+                    <span id="knowledgePercent">0</span>%
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PATIENCE -->
+
+        <div
+            class="ability"
+            style="--delay: 1.4s"
+        >
+
+            <div class="check">
+                ☑
+            </div>
+
+            <div class="ability-name">
+                Patience
+            </div>
+
+            <div class="result unknown blink-slow">
+                UNKNOWN
+            </div>
+
+            <div class="indicator">
+
+                <div class="meter">
+
+                    <div
+                        id="patienceMeter"
+                        class="meter-fill patience-fill"
+                    ></div>
+
+                </div>
+
+                <strong>
+                    <span id="patiencePercent">0</span>%
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SUPERPOWER -->
+
+        <div
+            class="ability"
+            style="--delay: 2.1s"
+        >
+
+            <div class="check">
+                ☑
+            </div>
+
+            <div class="ability-name">
+                Superpower
+            </div>
+
+            <div class="result suspicious blink-warning">
+                SUSPICIOUS
+            </div>
+
+            <div class="indicator danger-indicator">
+                 <div class="warning-symbol">
+                    <div class="warning-triangle">
+                        <span>!</span>
+                    </div>
+                 </div>
+            </div>
+            
+        </div>    
+
+
+        <!-- COFFEE DEPENDENCY-->
+
+        <div
+            class="ability"
+            style="--delay: 2.8s"
+        >
+
+            <div class="check">
+                ☑
+            </div>
+
+            <div class="ability-name">
+                Coffee Dependency
+            </div>
+
+            <div class="result critical blink-danger">
+                CRITICAL
+            </div>
+
+            <div class="siren-indicator">
+                <div class="red siren" aria-label="Warning siren">
+                </div>
+                <div class="siren-dome">
+                </div>
+            </div>
+            <div class="siren-base"></div>
+            
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- COMPLAINTS -->
+
+    <section class="complaints">
+
+        <div class="section-heading">
+
+            <span>02</span>
+
+            <h3>
+                COMPLAINTS FROM VICTIMS
+            </h3>
+
+        </div>
+
+
+        <div class="complaint">
+            <span>☑</span>
+            Taking test
+        </div>
+
+
+        <div class="complaint">
+            <span>☑</span>
+            Saying "This is very easy"
+        </div>
+
+
+        <div class="complaint">
+            <span>☑</span>
+            Asking questions when nobody ready
+        </div>
+
+
+        <div class="complaint">
+            <span>☑</span>
+            Taking classes in free period
+        </div>
+
+    </section>
+
+
+
+    <!-- FINAL ACTION -->
+
+    <section class="final-action">
+
+        <p id="processingMessage">
+            Culprit analysis in progress...
+        </p>
+
+
+        <button
+            id="punishmentButton"
+            onclick="startFinalProcessing()"
+            disabled
+        >
+            CHECKING CULPRIT...
+        </button>
+
+
+        <!-- 8 SECOND PROCESSING -->
+
+        <div
+            id="processingArea"
+            class="processing-area"
+        >
+
+            <p id="processingText">
+                VERIFYING FINAL DECISION...
+            </p>
+
+
+            <div class="progress-bar">
+
+                <div
+                    id="progress"
+                    class="progress"
+                ></div>
+
+            </div>
+
+
+            <p id="progressText">
+                0%
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <footer>
+        INTERNAL REVIEW SYSTEM
+    </footer>
+
+
+</main>
+
+
+<script src="page4.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1430 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ================================
+   PAGE
+================================ */
+
+body {
+    min-height: 100vh;
+    background: #080d13;
+    color: #edf1f5;
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 25px 15px;
+}
+
+
+/* ================================
+   MAIN CASE FILE
+================================ */
+
+.case-file {
+    width: min(100%, 900px);
+
+    background: #101821;
+
+    border: 1px solid #293847;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.65);
+
+    animation: pageAppear 0.8s ease;
+}
+
+
+@keyframes pageAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.header {
+
+    padding: 30px;
+
+    background: #0c131b;
+
+    border-bottom: 1px solid #293847;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 25px;
+}
+
+
+.system {
+
+    color: #71808e;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 13px;
+}
+
+
+.header h1 {
+
+    font-size: 36px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+}
+
+
+.header h2 {
+
+    color: #aeb8c1;
+
+    font-size: 18px;
+
+    font-weight: normal;
+}
+
+
+/* ================================
+   CASE ACTIVE
+================================ */
+
+.case-status {
+
+    padding: 13px 17px;
+
+    color: #ff7373;
+
+    border: 1px solid #8b3939;
+
+    background: rgba(120, 35, 35, 0.14);
+
+    font-family: "Courier New", monospace;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    white-space: nowrap;
+
+    animation: statusPulse 1.2s infinite;
+
+    box-shadow:
+        0 0 12px rgba(220,60,60,0.12);
+}
+
+
+@keyframes statusPulse {
+
+    50% {
+        opacity: 0.45;
+
+        box-shadow:
+            0 0 22px rgba(220,60,60,0.3);
+    }
+}
+
+
+/* ================================
+   SECTIONS
+================================ */
+
+.culprit,
+.complaints {
+
+    margin: 30px;
+}
+
+
+.section-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding-bottom: 14px;
+
+    border-bottom: 1px solid #2b3947;
+
+    margin-bottom: 17px;
+}
+
+
+.section-heading span {
+
+    color: #6090b9;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 15px;
+}
+
+
+.section-heading h3 {
+
+    font-size: 20px;
+
+    letter-spacing: 1px;
+}
+
+
+.checking-text {
+
+    color: #82909d;
+
+    font-size: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+.dots {
+
+    animation: dots 1.2s infinite;
+}
+
+
+@keyframes dots {
+
+    0%, 20% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* ================================
+   ABILITY CARDS
+================================ */
+
+.ability {
+
+    display: grid;
+
+    grid-template-columns:
+        35px 1fr 130px 180px;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 19px;
+
+    margin-bottom: 11px;
+
+    background: #0b1219;
+
+    border: 1px solid #273542;
+
+    border-radius: 8px;
+
+    opacity: 0;
+
+    transform: translateX(-25px);
+
+    animation:
+        abilityAppear
+        0.7s
+        var(--delay)
+        forwards;
+
+    min-height: 60px;
+}
+
+
+@keyframes abilityAppear {
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.ability:hover {
+
+    border-color: #435668;
+
+    transform: translateX(4px);
+}
+
+
+.check {
+
+    color: #6bd48d;
+
+    font-size: 22px;
+}
+
+
+.ability-name {
+
+    font-size: 17px;
+
+    font-weight: bold;
+}
+
+
+.result {
+
+    font-family: "Courier New", monospace;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    text-align: center;
+}
+
+
+/* ================================
+   RESULT COLOURS
+================================ */
+
+/* VERIFIED */
+
+.verified {
+
+    color: #64d58b;
+}
+
+
+/* EXTREME = ORANGE */
+
+.extreme {
+
+    color: #ff9f43;
+
+    animation:
+        extremePulse
+        0.9s
+        infinite;
+
+}
+
+
+@keyframes extremePulse {
+
+    50% {
+
+        opacity: 0.45;
+
+        text-shadow:
+            0 0 14px #ff8c32;
+    }
+}
+
+
+.unknown {
+    color: #aeb8c1;
+}
+
+
+.suspicious {
+    color: #ffae52;
+}
+
+
+.critical {
+    color: #ff5555;
+}
+
+
+/* ================================
+   GENERAL BLINKING
+================================ */
+
+.blink {
+
+    animation:
+        yellowBlink
+        0.75s
+        infinite;
+}
+
+
+.blink-slow {
+
+    animation:
+        slowBlink
+        1.5s
+        infinite;
+}
+
+
+.blink-warning {
+
+    animation:
+        warningBlink
+        0.9s
+        infinite;
+}
+
+
+.blink-danger {
+
+    animation:
+        redBlink
+        0.5s
+        infinite;
+}
+
+
+@keyframes yellowBlink {
+
+    50% {
+
+        opacity: 0.25;
+
+        text-shadow:
+            0 0 14px #ffd35a;
+    }
+}
+
+
+@keyframes slowBlink {
+
+    50% {
+        opacity: 0.35;
+    }
+}
+
+
+@keyframes warningBlink {
+
+    50% {
+
+        opacity: 0.3;
+
+        text-shadow:
+            0 0 12px #ffae52;
+    }
+}
+
+
+@keyframes redBlink {
+
+    50% {
+
+        opacity: 0.2;
+
+        text-shadow:
+            0 0 18px #ff3333;
+    }
+}
+
+
+/* ================================
+   INDICATORS
+================================ */
+
+.indicator {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+}
+
+
+.indicator strong {
+
+    min-width: 45px;
+
+    text-align: right;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 16px;
+}
+
+
+/* ================================
+   IDENTITY - VERIFIED CHECK
+================================ */
+
+.verified-indicator {
+
+    color: #67d78e;
+
+    font-size: 27px;
+
+    justify-content: center;
+
+    padding-left: 0;
+
+    transform: translateX(0);
+
+    animation:
+        verifiedPulse
+        1.2s
+        infinite;
+}
+
+
+@keyframes verifiedPulse {
+
+    0%, 100% {
+
+        transform:
+            translateX(0)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translateX(0)
+            scale(1.18);
+
+        text-shadow:
+            0 0 12px #67d78e,
+            0 0 22px rgba(103,215,142,0.5);
+    }
+}
+
+
+/* ================================
+   KNOWLEDGE GRAPH
+================================ */
+
+.knowledge-indicator {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+}
+
+
+.mini-graph {
+
+    width: 105px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    padding-bottom: 2px;
+}
+
+
+.mini-graph span {
+
+    width: 10px;
+
+    min-height: 7px;
+
+    background: #ff9f43;
+
+    border-radius:
+        3px 3px 0 0;
+
+    box-shadow:
+        0 0 8px rgba(255,159,67,0.5);
+
+    transform-origin: bottom;
+
+    animation:
+        graphMove
+        2.4s
+        ease-in-out
+        infinite alternate;
+}
+
+
+/* Rising graph */
+
+.mini-graph span:nth-child(1) {
+    height: 9px;
+    animation-delay: 0s;
+}
+
+
+.mini-graph span:nth-child(2) {
+    height: 15px;
+    animation-delay: 0.08s;
+}
+
+
+.mini-graph span:nth-child(3) {
+    height: 22px;
+    animation-delay: 0.16s;
+}
+
+
+.mini-graph span:nth-child(4) {
+    height: 28px;
+    animation-delay: 0.24s;
+}
+
+
+.mini-graph span:nth-child(5) {
+    height: 35px;
+    animation-delay: 0.32s;
+}
+
+
+.mini-graph span:nth-child(6) {
+    height: 41px;
+    animation-delay: 0.40s;
+}
+
+
+@keyframes graphMove {
+
+    0% {
+
+        transform:
+            scaleY(0.35);
+
+        opacity: 0.5;
+    }
+
+    50% {
+
+        transform:
+            scaleY(1);
+
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            scaleY(0.55);
+
+        opacity: 0.75;
+    }
+}
+
+
+/* ================================
+   METERS
+================================ */
+
+.meter {
+
+    width: 105px;
+
+    height: 10px;
+
+    background: #202b34;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+.meter-fill {
+
+    height: 100%;
+
+    border-radius: 20px;
+}
+
+
+/* ================================
+   PATIENCE
+   BAR MOVES, NUMBER STAYS 63%
+================================ */
+
+.patience-fill {
+
+    width: 63%;
+
+    background: #8e9aa5;
+
+    animation:
+        patienceMovement
+        2.6s
+        ease-in-out
+        infinite alternate;
+}
+
+
+@keyframes patienceMovement {
+
+    0% {
+
+        transform:
+            scaleX(0.35);
+
+        transform-origin: left;
+    }
+
+    25% {
+
+        transform:
+            scaleX(0.55);
+    }
+
+    50% {
+
+        transform:
+            scaleX(0.8);
+    }
+
+    75% {
+
+        transform:
+            scaleX(0.5);
+    }
+
+    100% {
+
+        transform:
+            scaleX(1);
+    }
+}
+
+
+/* ================================
+   SUPERPOWER
+   PAGE-2 STYLE WARNING
+================================ */
+
+.danger-indicator {
+
+    justify-content: center;
+
+    min-height: 50px;
+}
+
+
+.warning-symbol {
+    position: relative;
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    animation:
+        warningPulse
+        0.8s
+        infinite;
+}
+
+
+.warning-triangle {
+
+    width: 0;
+
+    height: 0;
+
+    border-left:
+        19px solid transparent;
+
+    border-right:
+        19px solid transparent;
+
+    border-bottom:
+        36px solid #ffd34e;
+
+    position: relative;
+
+    filter:
+        drop-shadow(
+            0 0 5px #ffd34e
+        )
+
+        drop-shadow(
+            0 0 10px
+            rgb(255, 210, 31)
+        );
+}
+
+
+.warning-triangle span {
+
+    position: absolute;
+
+    left: 0;
+
+    top: 17px;
+
+    transform: translateX(-50%);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 900;
+
+    color: #111;
+
+    line-height: 1;
+}
+
+
+@keyframes warningPulse {
+
+    0%, 100% {
+
+        transform:
+            scale(1);
+
+        opacity: 0.65;
+            
+    }
+
+    50% {
+
+        transform:
+            scale(1.17);
+
+        opacity: 0.48;
+
+        filter:
+            drop-shadow(
+                0 0 3px #ffd34e
+            )
+
+            drop-shadow(
+                0 0 25px #ffd34e
+            );
+    }
+}
+
+/* =====================================================
+   COFFEE DEPENDENCY — RED SIREN
+   ===================================================== */
+
+/* Completely override the old indicator positioning */
+.ability .siren-indicator {
+    width: 180px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: visible;
+}
+
+
+/* RED SIREN */
+.red-siren {
+    width: 58px;
+    height: 58px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    animation: sirenGlow 0.65s infinite alternate;
+}
+
+
+/* Glowing red dome */
+.siren-dome {
+    width: 42px;
+    height: 35px;
+
+    background: #ff3030;
+
+    border-radius: 24px 24px 8px 8px;
+
+    box-shadow:
+        0 0 8px #ff3030,
+        0 0 18px #ff3030,
+        0 0 32px rgba(255, 30, 30, 0.9);
+
+    position: relative;
+}
+
+
+/* Small bright light inside */
+.siren-dome::after {
+    content: "";
+
+    position: absolute;
+
+    width: 12px;
+    height: 12px;
+
+    background: #ffffff;
+
+    border-radius: 50%;
+
+    top: 9px;
+    left: 15px;
+
+    opacity: 0.9;
+
+    box-shadow:
+        0 0 8px #ffffff;
+}
+
+
+/* Siren base */
+.siren-base {
+    width: 46px;
+    height: 7px;
+    position: relative;
+left: 685px;
+bottom: 28px;
+
+    background: #9d1515;
+
+    border-radius: 7px 7px 2px 2px;
+
+}
+
+
+/* Continuous flashing/glowing */
+@keyframes sirenGlow {
+
+    0% {
+        opacity: 0.35;
+
+        filter: brightness(0.7);
+
+        transform: scale(0.96);
+
+        filter: drop-shadow(
+            0 0 3px #ff2020
+        );
+    }
+
+    50% {
+        opacity: 1;
+
+        filter: brightness(1.5);
+
+        transform: scale(1.04);
+
+        filter: drop-shadow(
+            0 0 15px #ff2020
+        );
+    }
+
+    100% {
+        opacity: 0.45;
+
+        filter: brightness(0.8);
+
+        transform: scale(0.98);
+
+        filter: drop-shadow(
+            0 0 5px #ff2020
+        );
+    }
+}
+
+/* ================================
+   COMPLAINTS
+================================ */
+
+.complaint {
+
+    padding: 16px 18px;
+
+    margin-bottom: 9px;
+
+    background: #0b1219;
+
+    border: 1px solid #273542;
+
+    border-radius: 7px;
+
+    color: #d0d7dd;
+
+    font-size: 16px;
+
+    opacity: 0;
+
+    transform: translateY(8px);
+
+    animation:
+        complaintAppear
+        0.5s
+        forwards;
+}
+
+
+.complaint:nth-of-type(2) {
+    animation-delay: 0.3s;
+}
+
+
+.complaint:nth-of-type(3) {
+    animation-delay: 0.6s;
+}
+
+
+.complaint:nth-of-type(4) {
+    animation-delay: 0.9s;
+}
+
+
+.complaint span {
+
+    color: #69d58d;
+
+    font-size: 20px;
+
+    margin-right: 9px;
+}
+
+
+@keyframes complaintAppear {
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* ================================
+   FINAL ACTION
+================================ */
+
+.final-action {
+
+    margin: 35px 30px;
+
+    text-align: center;
+}
+
+
+#processingMessage {
+
+    color: #8997a4;
+
+    font-size: 15px;
+
+    margin-bottom: 16px;
+}
+
+
+/* ================================
+   RED BUTTON
+================================ */
+
+#punishmentButton {
+
+    width: 100%;
+
+    padding: 18px;
+
+    border:
+        1px solid #9e3030;
+
+    border-radius: 6px;
+
+    background: #9e3030;
+
+    color: white;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+    box-shadow:
+        0 0 18px
+        rgba(180,40,40,0.18);
+}
+
+
+#punishmentButton:not(:disabled) {
+
+    animation:
+        punishmentPulse
+        1.2s
+        infinite;
+}
+
+
+@keyframes punishmentPulse {
+
+    50% {
+
+        box-shadow:
+            0 0 28px
+            rgba(220,50,50,0.4);
+    }
+}
+
+
+#punishmentButton:hover:not(:disabled) {
+
+    background: #c43b3b;
+
+    transform:
+        translateY(-2px);
+}
+
+
+#punishmentButton:disabled {
+
+    background: #442326;
+
+    border-color: #603338;
+
+    color: #9d7b7f;
+
+    cursor: not-allowed;
+
+    animation: none;
+}
+
+
+/* ================================
+   8 SECOND PROCESSING
+================================ */
+
+.processing-area {
+
+    display: none;
+
+    margin-top: 24px;
+
+    padding: 23px;
+
+    background: #090f15;
+
+    border:
+        1px solid #713a3a;
+
+    border-radius: 8px;
+}
+
+
+#processingText {
+
+    color: #ff6767;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    margin-bottom: 17px;
+
+    animation:
+        processingBlink
+        0.7s
+        infinite;
+}
+
+
+@keyframes processingBlink {
+
+    50% {
+        opacity: 0.35;
+    }
+}
+
+
+.progress-bar {
+
+    height: 15px;
+
+    background: #202932;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+.progress {
+
+    height: 100%;
+
+    width: 0%;
+
+    background: #c63b3b;
+
+    transition:
+        width 0.1s linear;
+}
+
+
+#progressText {
+
+    color: #b8c0c7;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 15px;
+
+    margin-top: 10px;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+
+    padding: 22px;
+
+    border-top:
+        1px solid #222e39;
+
+    text-align: center;
+
+    color: #4d5a66;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+/* ================================
+   ANDROID / MOBILE
+================================ */
+
+@media (max-width: 700px) {
+
+    body {
+
+        padding: 10px;
+
+    }
+
+
+    .header {
+
+        padding: 23px 20px;
+
+        flex-direction: column;
+
+        gap: 17px;
+    }
+
+
+    .header h1 {
+
+        font-size: 29px;
+
+    }
+
+
+    .header h2 {
+
+        font-size: 15px;
+
+        line-height: 1.5;
+    }
+
+
+    .case-status {
+
+        align-self: flex-start;
+
+        font-size: 13px;
+
+        padding: 12px 15px;
+    }
+
+
+    .culprit,
+    .complaints {
+
+        margin: 25px 18px;
+    }
+
+
+    .ability {
+
+        grid-template-columns:
+            30px 1fr;
+
+        gap: 10px;
+
+        padding: 17px;
+
+    }
+
+
+    .ability-name {
+
+        font-size: 16px;
+    }
+
+
+    .result {
+
+        grid-column: 2;
+
+        text-align: left;
+
+        font-size: 14px;
+    }
+
+
+    .indicator {
+
+        grid-column: 2;
+
+        justify-content: flex-start;
+    }
+
+
+    .knowledge-indicator {
+
+        justify-content: flex-start;
+    }
+
+
+    .mini-graph {
+
+        width: 95px;
+
+        height: 43px;
+    }
+
+
+    .verified-indicator {
+
+        justify-content: flex-start;
+
+        padding-left: 10px;
+    }
+
+
+    .danger-indicator,
+    .siren-indicator {
+
+        justify-content: flex-start;
+
+        padding-left: 8px;
+    }
+
+
+    .complaint {
+
+        font-size: 15px;
+
+        line-height: 1.4;
+    }
+
+
+    .section-heading h3 {
+
+        font-size: 17px;
+    }
+
+
+    .final-action {
+
+        margin-left: 18px;
+
+        margin-right: 18px;
+    }
+
+
+    #punishmentButton {
+
+        font-size: 15px;
+
+        padding: 17px 12px;
+    }
+
+
+    #processingText {
+
+        font-size: 13px;
+
+        line-height: 1.5;
+    }
+
+}
