@@ -1,4 +1,23 @@
 /* =========================================
+   PAGE 5 BACKGROUND MUSIC
+========================================= */
+
+window.addEventListener("load", () => {
+
+    const music =
+        document.getElementById("page5Music");
+
+    music.volume = 0.35;
+
+    music.play().catch(() => {
+        console.log(
+            "Music playback was blocked by the browser."
+        );
+    });
+
+});
+
+/* =========================================
    PAGE 5
    3D PLEXUS / SETTLEMENT
 ========================================= */
