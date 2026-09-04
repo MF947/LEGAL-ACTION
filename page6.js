@@ -6,6 +6,32 @@ document.addEventListener(
     "DOMContentLoaded",
     () => {
 
+        /* ================================
+           PAGE 6 BACKGROUND MUSIC
+        ================================= */
+
+        const music =
+            document.getElementById("page6Music");
+
+        if (music) {
+
+            music.volume = 0.35;
+
+            music.play().catch(() => {
+
+                console.log(
+                    "Page 6 music playback was blocked."
+                );
+
+            });
+
+        }
+
+
+        /* ================================
+           CONTINUE BUTTON
+        ================================= */
+
         const button =
             document.querySelector(
                 ".continue-button"
@@ -17,21 +43,24 @@ document.addEventListener(
            final button is clicked.
         */
 
-        button.addEventListener(
-            "click",
-            () => {
+        if (button) {
 
-                button.textContent =
-                    "OPENING FINAL PAGE...";
+            button.addEventListener(
+                "click",
+                () => {
 
-            }
-        );
+                    button.textContent =
+                        "OPENING FINAL PAGE...";
+
+                }
+            );
+
+        }
 
 
-        /*
-           Add a gentle floating effect
-           to the decorative symbols.
-        */
+        /* ================================
+           DECORATIONS
+        ================================= */
 
         const decorations =
             document.querySelectorAll(
