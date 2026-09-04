@@ -287,6 +287,21 @@ window.addEventListener("load", () => {
 
     startCulpritAnalysis();
 
-    startKnowledgeStopwatch();
+    startKnowledgeStopwatch(); 
+
+   const music = document.getElementById("page4Music");
+
+    if (sessionStorage.getItem("startPage4Music") === "true") {
+
+        music.volume = 0.35;
+
+        music.play().catch(() => {
+            console.log("Music playback was blocked by the browser.");
+        });
+
+        sessionStorage.removeItem("startPage4Music");
+    }
+
+});
 
 });
