@@ -23,6 +23,8 @@ function continueProcess() {
 
     setTimeout(() => {
 
+        sessionStorage.setItem("startPage4Music", "true");
+
         window.location.href = "page4.html";
 
     }, 1800);
