@@ -291,18 +291,15 @@ window.addEventListener("load", () => {
 
    const music = document.getElementById("page4Music");
 
-    if (
-       music &&
-       sessionStorage.getItem("startPage4Music") === "true") {
+if (music) {
 
-        music.volume = 0.35;
+    music.volume = 0.35;
 
-        music.play().catch(() => {
-            console.log("Music playback was blocked by the browser.");
-        });
+    music.play().catch(() => {
+        console.log("Page 4 music was blocked by the browser.");
+    });
 
-        sessionStorage.removeItem("startPage4Music");
-    }
+}
 
 });
 
