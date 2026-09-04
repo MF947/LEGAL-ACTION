@@ -29,7 +29,9 @@ function startKnowledgeStopwatch() {
 function startCulpritAnalysis() {
 
     const duration = 6000;
+
     const startTime = Date.now();
+
 
     function analyze() {
 
@@ -39,6 +41,10 @@ function startCulpritAnalysis() {
         const progress =
             Math.min(elapsed / duration, 1);
 
+
+        /* =========================
+           PATIENCE
+        ========================= */
 
         const patience =
             Math.floor(
@@ -61,6 +67,10 @@ function startCulpritAnalysis() {
             patienceValue + "%";
 
 
+        /* =========================
+           ANALYSIS FINISHED
+        ========================= */
+
         if (progress < 1) {
 
             requestAnimationFrame(analyze);
@@ -72,6 +82,7 @@ function startCulpritAnalysis() {
         }
 
     }
+
 
     analyze();
 
@@ -86,10 +97,12 @@ function finishCulpritAnalysis() {
 
     analysisComplete = true;
 
+
     const button =
         document.getElementById(
             "punishmentButton"
         );
+
 
     const message =
         document.getElementById(
@@ -102,6 +115,7 @@ function finishCulpritAnalysis() {
     button.textContent =
         "READY FOR PUNISHMENT →";
 
+
     message.textContent =
         "Culprit analysis complete.";
 
@@ -109,7 +123,7 @@ function finishCulpritAnalysis() {
 
 
 /* ================================
-   FINAL PROCESSING
+   START 8 SECOND PROCESSING
 ================================ */
 
 function startFinalProcessing() {
@@ -117,6 +131,7 @@ function startFinalProcessing() {
     if (!analysisComplete || processingStarted) {
         return;
     }
+
 
     processingStarted = true;
 
@@ -126,31 +141,38 @@ function startFinalProcessing() {
             "punishmentButton"
         );
 
+
     const processingArea =
         document.getElementById(
             "processingArea"
         );
+
 
     const processingText =
         document.getElementById(
             "processingText"
         );
 
+
     const progress =
         document.getElementById(
             "progress"
         );
+
 
     const progressText =
         document.getElementById(
             "progressText"
         );
 
+
     const message =
         document.getElementById(
             "processingMessage"
         );
 
+
+    /* Hide button */
 
     button.style.display = "none";
 
@@ -161,6 +183,7 @@ function startFinalProcessing() {
 
 
     const duration = 8000;
+
     const startTime = Date.now();
 
 
@@ -168,6 +191,7 @@ function startFinalProcessing() {
 
         const elapsed =
             Date.now() - startTime;
+
 
         const percent =
             Math.min(
@@ -181,9 +205,14 @@ function startFinalProcessing() {
         progress.style.width =
             percent + "%";
 
+
         progressText.textContent =
             percent + "%";
 
+
+        /* =========================
+           CHANGING MESSAGES
+        ========================= */
 
         if (percent < 20) {
 
@@ -215,8 +244,13 @@ function startFinalProcessing() {
 
         else {
 
+            /* =====================
+               FINAL JOKE
+            ===================== */
+
             processingText.textContent =
                 "HA HA HA.....";
+
 
             progressText.textContent =
                 "100%";
@@ -229,7 +263,9 @@ function startFinalProcessing() {
 
             }, 1000);
 
+
             return;
+
         }
 
 
@@ -247,38 +283,22 @@ function startFinalProcessing() {
    PAGE LOAD
 ================================ */
 
-window.addEventListener(
-    "load",
-    () => {
+window.addEventListener("load", () => {
 
-        startCulpritAnalysis();
+    startCulpritAnalysis();
 
-        startKnowledgeStopwatch();
+    startKnowledgeStopwatch();
 
+    const music = document.getElementById("page4Music");
 
-        /* =========================
-           PAGE 4 MUSIC
-        ========================= */
+if (music) {
 
-        const music =
-            document.getElementById(
-                "page4Music"
-            );
+    music.volume = 0.35;
 
+    music.play().catch(() => {
+        console.log("Page 4 music was blocked by the browser.");
+    });
 
-        if (music) {
+}
 
-            music.volume = 0.35;
-
-            music.play().catch(() => {
-
-                console.log(
-                    "Page 4 music was blocked by the browser."
-                );
-
-            });
-
-        }
-
-    }
-);
+});
