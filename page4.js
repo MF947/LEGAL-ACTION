@@ -291,7 +291,9 @@ window.addEventListener("load", () => {
 
    const music = document.getElementById("page4Music");
 
-    if (sessionStorage.getItem("startPage4Music") === "true") {
+    if (
+       music &&
+       sessionStorage.getItem("startPage4Music") === "true") {
 
         music.volume = 0.35;
 
